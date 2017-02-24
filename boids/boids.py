@@ -6,6 +6,19 @@ import numpy as np
 class Boids(object):
     def __init__(self, config, count=0, fly_to_middle=0, alert_distance=0, 
 				formation_flying_distance=0, formation_flying_strength=0): 
+		#get config 
+		self.config=config
+		
+		
+		self.boid_count=count
+		self.fly_to_middle = fly_to_middle
+		self.alert_distance = alert_distance
+		self.formation_flying_distance = formation_flying_distance
+		self.formation_flying_strength = formation_flying_strength
+		self.position_lower_limit=np.array([self.config['Boids']['xlim'][0], self.config['Boids']['ylim'][0]])
+		self.position_upper_limit=np.array([self.config['Boids']['xlim'][1], self.config['Boids']['ylim'][1]])
+		self.velocity_lower_limit=np.array([self.config['Boids']['vxlim'][0], self.config['Boids']['vylim'][0]])
+		self.velocity_upper_limit=np.array([self.config['Boids']['vxlim'][1], self.config['Boids']['vylim'][1]]) 
 		
 		
 
