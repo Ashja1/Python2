@@ -10,6 +10,9 @@ class Boids(object):
 		
 
     def new_flock(self, count, lower_limits, upper_limits):
+        width=upper_limits-lower_limits
+        return (lower_limits[:,np.newaxis] + 
+            np.random.rand(2, count)*width[:,np.newaxis])
         
 
     def fly_towards_middle(self, strength):
